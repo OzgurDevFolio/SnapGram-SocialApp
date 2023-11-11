@@ -7,7 +7,6 @@ import { SignupValidation } from '@/lib/validation'
 import { z } from 'zod'
 import Loader from '@/components/shared/Loader'
 import { Link, useNavigate } from 'react-router-dom'
-import { createUserAccount } from '@/lib/appwrite/api'
 import { useToast } from '@/components/ui/use-toast'
 import { useCreateUserAccount, useSignInAccount } from '@/lib/react-query/queriesAndMutations'
 import { useUserContext } from '@/context/AuthContext'
@@ -17,11 +16,11 @@ const SignUpForm = () => {
 
     const navigate = useNavigate()
 
-    const { checkAuthUser, isLoading: isUserLoading } = useUserContext()
+    const { checkAuthUser } = useUserContext()
 
     const { mutateAsync: createUserAccount, isPending: isCreatingAccount } = useCreateUserAccount()
 
-    const { mutateAsync: signInAccount, isPending: isSigningIn } = useSignInAccount()
+    const { mutateAsync: signInAccount } = useSignInAccount()
 
     // 1. Define your form.
     const form = useForm<z.infer<typeof SignupValidation>>({

@@ -1,10 +1,18 @@
-import { Models } from 'appwrite'
 import Loader from './Loader'
 import GridPostList from './GridPostList'
 
 type SearchResultsProps = {
     isSearchFetching: boolean
-    searchedPosts: Models.Document[]
+    searchedPosts: {
+        [key: string]: any
+        $id: string
+        $collectionId: string
+        $databaseId: string
+        $createdAt: string
+        $updatedAt: string
+        $permissions: string[]
+        $documents: string
+    }
 }
 
 const SearchResults = ({ isSearchFetching, searchedPosts }: SearchResultsProps) => {

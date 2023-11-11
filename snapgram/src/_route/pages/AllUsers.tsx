@@ -13,7 +13,6 @@ const AllUsers = () => {
 
         return
     }
-
     return (
         <div className="common-container">
             <div className="user-container">

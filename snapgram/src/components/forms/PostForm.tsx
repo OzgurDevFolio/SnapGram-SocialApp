@@ -9,7 +9,7 @@ import FileUploader from '../shared/FileUploader'
 import { PostValidation } from '@/lib/validation'
 import { Models } from 'appwrite'
 import { useUserContext } from '@/context/AuthContext'
-import { toast, useToast } from '../ui/use-toast'
+import { useToast } from '../ui/use-toast'
 import { useNavigate } from 'react-router-dom'
 import { useCreatePost, useUpdatePost } from '@/lib/react-query/queriesAndMutations'
 
